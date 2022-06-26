@@ -1,0 +1,22 @@
+@font-face{
+src: url('../fonts/sahel-font-v3.4.0/Sahel.ttf') format('truetype') , url('../fonts/sahel-font-v3.4.0/Sahel.eot') format('eot');
+font-family: Sahel;
+}
+
+*{
+padding : 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body{
+font-family: Sahel,Arial,sans-serif;}
+
+
+@keyframes opacity {
+0%{
+opacity: 0;
+}
+100%{
+opacity: 1;}
+}

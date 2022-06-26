@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Navigate, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Todos from "./components/Todos";
+import { DARK } from "./helpers/colors";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [todosPage, setTodosPage] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen" style={{ backgroundColor: DARK }}>
+      <Navbar setTodosPage={setTodosPage} todosPage={todosPage} />
+      <Routes>
+        <Route path="/" element={<Navigate to="/todos" />} />
+        <Route path="/todos" element={<Todos todosPage={todosPage} />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
